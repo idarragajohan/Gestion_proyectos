@@ -1,0 +1,140 @@
+
+.modalOpacity{
+	display:none;
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	z-index: 10000;
+	background: blue;
+	opacity: 0.1;
+	text-align:center;
+	
+}
+
+.loadingModal{
+	opacity: 1;
+    right: 45%;
+	
+}
+
+
+.footer{
+	
+    color: white;
+    /* position: absolute; */
+    bottom: 1px;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #f8f8f8;
+    text-align: center;
+    padding-top: 20px;
+	border-top: 1px solid;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+.loginBox{
+	
+	margin-top: 5%;
+	
+}
+
+.alertLogin{
+
+	display: none;
+}
+
+.divActionsBtn{
+	
+	text-align: center;
+	margin:-8px;
+	margin-top: -6px;
+	
+}
+
+.error {
+	
+    min-width:200px;
+    height:auto;
+    position:absolute;
+    left:50%;
+    margin-left:-100px;
+    bottom:0px;
+	background-color: #383838;
+	color: #F0F0F0;
+	z-index: 999999999999;
+	
+}
+
+.nav{
+
+	color: red;
+}
+
+/* /*CUSTOM NAV BAR*/ */
+ /* .navbar.navbar-default{ */
+    /* background-color: #f8f8f8; */
+    /* border-color: #e7e7e7; */
+    /* margin: 0; */
+    /* border-radius: 0; */
+  /* } */
+  /* .navbar.navbar-default .navbar-brand { */
+    /* color: #666; */
+    /* text-shadow: none; */
+    /* min-width: 150px; */
+    /* } */
+   /* .navbar.navbar-default .navbar-nav > li > a { */
+    /* color: #666; */
+    /* text-shadow: none; */
+    /* } */
+    /* .navbar.navbar-default .navbar-nav > li > a { */
+    /* color: #666; */
+    /* text-shadow: none; */
+    /* } */
+    /* .navbar.navbar-default .navbar-nav > li > a:hover{ */
+    /* color: #acc47f; */
+    /* } */
+    /* .navbar.navbar-default .navbar-nav > .active > a{ */
+    /* color: #fff; */
+    /* background-color: #acc47f; */
+    /* } */
+    /* .navbar.navbar-default .navbar-nav > .active > a:hover{ */
+    /* color: #608224; */
+    /* background-color: #acc47f; */
+    /* } */
+    /* .navbar.navbar-default .caret { */
+    /* border-top-color: #ccc; */
+    /* border-bottom-color: #ccc; */
+    /* } */
+    /* .navbar.navbar-default .caret:hover { */
+    /* border-top-color: #333; */
+    /* border-bottom-color: #333; */
+    /* } */
+
+
+/*
+////////////////////
+////////////////////
+////////////////////
+ Custom sidebar menu 
+////////////////////
+////////////////////
+////////////////////
+*/
+

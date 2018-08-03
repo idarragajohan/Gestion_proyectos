@@ -1,0 +1,72 @@
+
+
+.dynamicTable{
+
+	border: 1px solid black;
+	width: 100%;
+	border-spacing: 0;
+    border-collapse: collapse;
+    font-size: 14px;
+	
+}
+
+.dynamicTable thead{
+	
+	text-align: center;
+	background-color:#306393;
+	 
+	
+}
+
+.dynamicTable thead td{
+	
+	border: 1px solid black;
+	padding: 5px;
+	color: #FFFFFF;
+	font-size: bold;
+
+}
+
+.dynamicTable tbody td{
+	
+	border: 1px solid black;
+
+}
+
+.dynamicTable .dynamicTableSpan{
+	
+	display: block;
+	margin: 5px;
+	
+
+}
+
+.pagerDiv{
+	
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	padding-top:10px;
+
+}
+
+.pagerDiv .spanNumber{
+	
+	padding-left: 4px;
+	padding-right: 4px;
+	cursor: pointer;
+	
+
+}
+
+
+.pagerDiv .spanNumberSelected{
+	
+	padding-left: 3px;
+	padding-right: 3px;
+	cursor: pointer;
+	border: 1px solid;
+	font-weight: bold;
+
+}
+

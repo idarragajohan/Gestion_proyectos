@@ -1,0 +1,58 @@
+
+
+.dynamicTable2{
+
+	border: 1px solid black;
+	width: 100%;
+	border-spacing: 0;
+    border-collapse: collapse;
+    font-size: 14px;
+	
+}
+
+.dynamicTable2 thead{
+	
+	text-align: center;
+	background-color:#ECECEA;
+	 
+	
+}
+
+.dynamicTable2 thead td{	
+	color: #ECECEA;
+	font-size: bold;
+}
+
+.dynamicTable2 tbody td{	
+	text-align:center;
+}
+
+.dynamicTable2 .dynamicTable2Span{
+	
+	display: block;
+	margin: 5px;
+	
+
+}
+
+
+.pagerDiv .spanNumber{
+	
+	padding-left: 4px;
+	padding-right: 4px;
+	cursor: pointer;
+	
+
+}
+
+
+.pagerDiv .spanNumberSelected{
+	
+	padding-left: 3px;
+	padding-right: 3px;
+	cursor: pointer;
+	border: 1px solid;
+	font-weight: bold;
+
+}
+
