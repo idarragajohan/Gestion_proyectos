@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tesis</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+   
+    <link href="frameWork/dynamicTable/dynamicTable.css" rel="stylesheet" />
+   
+
+
+
+</head>
+<body>
+
+
+    <div id="wrapper" style = "display: none">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; ">
+
+			<div class="navbar-header">
+			 <!-- <img src = "recursos/3.png" style = "margin-left:-100px;"> -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"></a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+               <!-- <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>ECO-test</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>ECO-test</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>ECO-test</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages ->
+                </li>
+                <!-- /.dropdown ->
+
+                <!-- /.dropdown ->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts ->
+                </li>
+                <!-- /.dropdown -->
+
+                <li class="dropdown">
+					<div id="loadCenterSuport" style="display:none;">
+					<button class="btn btn-danger disabled" id="">Logeado</button>
+					</div>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="javascript:void(0)" id="recoverPass"><i class="fa fa-gear fa-fw"></i> Cambiar Contraseña</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="javascript:void(0)" id = "logOut"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+			<!-- sidebar -->
+            <div class="navbar-default sidebar" role="navigation" id="nav_div_menu">
+                <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+                <div class="sidebar-nav navbar-collapse">
+
+                    <ul  class="nav" id="side-menu" style="height:700px;">
+                        <li id="collapse_navBar">
+                              <img src = "recursos/3.png" style = "cursor:pointer; margin-top:30px; margin-bottom:30px; margin-left:20px; width: 80%; ">
+							   <!-- <span class="fa fa-home fa-arrow-circle-left" style= "cursor:pointer;"></span> -->
+                        </li>
+						<li id = "homeLink">
+                            <a href="javascript:void(0)" class="right" title="" data-placement="right" data-toggle="tooltip" data-original-title="Inicio" >
+							<i class="fa fa-home fa-fw" style="margin-top:13px"></i>
+							<i class="fa " id="iLhome"> Inicio</i>
+							</a>
+
+                        </li>
+						<li id="analisisLink" class="disabled">
+                            <a href="javascript:void(0)" >
+							<i class="fa fa-cubes fa-fw" style="margin-top:13px"></i>
+							<i class="fa " id="iLanalisis" > Fábrica</i>
+
+							</a>
+                        </li>
+                        <li id="clienteLink" class="disabled">
+                            <a href="javascript:void(0)" >
+							<i class="fa fa-user-md fa-fw" style="margin-top:13px"></i>
+							<i class="fa " id="iLclient" > Cliente</i>
+
+							</a>
+                        </li>
+                        <li id="formularioLink" class="disabled">
+                            <a href="javascript:void(0)" id = "">
+							<i class="fa fa-list-alt fa-fw" style="margin-top:13px"></i>
+							<i class="fa " id="iLconsulta" >Consulta</i>
+
+							</a>
+                        </li>
+                        <li id="solicitudLink" class="disabled">
+                            <a href="javascript:void(0)" id = "">
+							<i class="fa fa-files-o fa-fw" style="margin-top:13px"></i>
+							<i class="fa " id="iLcredito" >Solicitud de Crédito</i>
+
+							</a>
+                        </li>
+                        <li id = "informesLink">
+                            <a href="javascript:void(0)" >
+							<i class="fa fa-bar-chart-o fa-fw" style="margin-top:13px"></i>
+							<i class="fa "  id="iLreport" >Informes</i>
+
+							</a>
+                        </li>
+                        <li id="liAdmin">
+
+							<!-- <a href="javascript:void(0)" id = ""><i class="fa " ></i> Administración </a> -->
+							<a href="javascript:void(0)" id = "">
+
+							<i class="fa fa-wrench fa-fw"   id="iLadmin">Administración </i>
+							</a>
+							<!-- <span class="arrow"></span> -->
+							<ul class="nav nav-second-level">
+								 <li  id="usuariosLink" class="disabled">
+                                    <a href="javascript:void(0)" id="">Centros y Usuarios</a>
+                                </li>
+                                <li id="seguridadLink" class="disabled">
+                                    <a href="javascript:void(0)" id="">Seguridad</a>
+                                </li>
+                                <li id="maestroLink" class="disabled">
+                                    <a href="javascript:void(0)" id=""  style="display:none;">Maestros</a>
+                                </li>
+                                <li id="configLink" >
+                                    <a href="javascript:void(0)" id="" >Configuración</a>
+                                </li>
+								<li id="notifLink" class="enabled">
+                                    <a href="javascript:void(0)" id="" >Notificaciones</a>
+                                </li>
+								<li id="simulaLink" class="enabled" style="display:none;">
+                                    <a href="javascript:void(0)" id="" >Pruebas Simulador</a>
+                                </li>
+								<li id="estadoLink" class="enabled">
+                                    <a href="javascript:void(0)" id="" >Estado de cuenta</a>
+                                </li>
+							</ul>
+						</li>
+
+						<li id="liControl">
+							 <a href="javascript:void(0)" id = "">
+							 <i class="fa fa-wrench fa-fw"  id="iLcontrol">Control Interno</i>
+
+							 </a>
+							<ul class="nav nav-second-level">
+
+								<li  id="facturacionLink">
+										<a href="javascript:void(0)" id="">Facturación</a>
+								</li>
+								<li  id="vendedorLink">
+										<a href="javascript:void(0)" id="">Vendedores</a>
+								</li>
+								<li  id="soporteLink" >
+										<a href="javascript:void(0)" id="">Soporte</a>
+								</li>
+
+							</ul>
+
+						</li>
+
+                    </ul>
+
+
+				</div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+
+		</nav>
+
+		<div id="page-wrapper">
+
+		</div>
+
+		<!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+
+	<div class="container loginBox" id = "login-wrapper" style = "display: none">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div>
+                        <h2 class="panel-title">
+                            <img src = "recursos/3.1.png" style = "margin-top:20px; margin-bottom:20px; margin-left:40px;">
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="usuario" name="email" type="text" autofocus id = "userLogin">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="contraseña" name="password" type="password" id = "userPssw">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <span id="forgetPass">¿Olvidó su Contraseña?</span>
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <a href="javascript:void(0)" class="btn btn-lg btn-success btn-block" id = "loginBtn" style = "background-color hover:yellow">Ingresar</a>
+                            </fieldset>
+                            <br/>
+                            <div class="alert alert-danger alert-dismissable alertLogin" id = "loginError">
+                                <button type="button" class="close" id="closeAlert" aria-hidden="true">&times;</button>
+                                <!-- Usuario y/o contraseña Incorrectos -->
+								<div id ="infoLabelLogin"></div>
+                            </div>
+							<!-- <div id = "loginError"> -->
+
+                            <!-- </div> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="footer">
+			  <div class="container" style ="text-align:center;">
+				<p class="text-muted">Gestión de proyectos</p>
+			  </div>
+	</div>
+
+
+
+	<!--MODALS-->
+
+	<!--MODAL AVISO-->
+	<div class="modal fade" id="modalAviso">
+	  <div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title">Aviso</h4>
+		  </div>
+		  <div class="modal-body">
+			<p id="modalMensaje"><span id = "msnContent"></span></p>
+		  </div>
+		  <div class="modal-footer" style = "text-align:center">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id = "aceptModal">Aceptar</button>
+			<button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- ACTUALIZAR CONTRASEÑA-->
+	<div class="modal fade" id="passAviso">
+	  <div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title">Cambiar Contraseña</h4>
+		  </div>
+		  <div class="modal-body">
+			<div>
+
+			<input class="form-control" type="password" id="oldPass" placeholder="Ingrese su contraseña" />
+			<br>
+			<input class="form-control" type="password" id="NewPass" placeholder="Ingrese su contraseña nueva"/>
+			<br>
+			<input class="form-control" type="password" id="ChkNewPass" placeholder="Repita su contraseña nueva"/>
+			</div>
+
+		  </div>
+		  <div class="modal-footer" style = "text-align:center">
+
+			<button type="button" class="btn btn-primary" id="updatePass">Actualizar</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+
+	<!-- Recuperar CONTRASEÑA-->
+<div class="modal fade" id="modalForgotPass">
+	  <div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title">Recuperar Contraseña</h4>
+		  </div>
+		  <div class="modal-body">
+				<div>
+					<input class="form-control" type="email" name="nuevoEmail" id="emailRecover" placeholder="Digite su email">
+				</div>
+		 </div>
+		  <div class="modal-footer" style = "text-align:center">
+			<button type="button" class="btn btn-primary" id="recoverPassEmail">Recuperar</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+
+	<!-- <div class='error' style='display:none' id = "toastMsn">I did something!</div>-->
+
+
+<div class="error alert alert-info alert-dismissable" style='display:none' id = "toastMsn">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<span id = "toastText"></span>.
+</div>
+
+</body>
+
+<!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="bower_components/raphael/raphael-min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+    <!-- DataTables CSS -->
+    <link href="bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+	<!-- DataTables JavaScript -->
+    <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+
+	 <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script src="frameWork/js/comms.js"></script>
+    <script src="frameWork/js/index.js"></script>
+    <script src="frameWork/estilos/index.css"></script>
+
+	<script src="frameWork/dynamicTable/tableCreator.js"></script>
+
+	<!--flot-excanvas-->
+	<script language="javascript" type="text/javascript" src="bower_components/flot/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="bower_components/flot/excanvas.min.js"></script>
+	<script type="text/javascript" src="bower_components/flot/jquery.flot.pie.js"></script>
+
+
+<div class="modalOpacity" id="loadingModal">
+
+	<!-- <div class="loadingModal"> -->
+
+	<!-- <button class="btn btn-sm btn-primary"> -->
+	<!-- <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> -->
+	<!-- Cargando... -->
+	<!-- </button> -->
+
+	<!-- </div> -->
+</div>
+
+
+</html>

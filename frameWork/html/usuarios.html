@@ -1,0 +1,485 @@
+<div class="row">
+	<div class="col-lg-12">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#usuarios" data-toggle="tab">Usuarios</a>
+				</li>
+				<li><a href="#centros" data-toggle="tab" class="disabled" id="liCentros">Centros</a>
+				</li>				
+			</ul>	
+			<div class="tab-content">
+				<div class="tab-pane fade in active" id="usuarios">
+					<div class = "row">
+						<div class="col-lg-10">
+							<div style = "text-align:right; padding:5px;">
+								<button type="button" class="btn btn-primary" id = "btnNewUser"><i class="fa fa-plus "></i>
+									Nuevo
+								</button>
+							</div>
+							<div class = "dataTable_wrapper" id = "usersTable">
+							</div>
+						</div>
+						<br/>
+						<div class="col-lg-2">
+							<div class="panel panel-default">			
+								<div class="panel-heading">Búsqueda</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="form-group"> 
+												<label>ID</label>
+												<input class="form-control" type="text" id="IDSearch">						
+											</div>
+											<div class="form-group">
+												<label>Nombre</label>
+												<input class="form-control" type="text" id="NameSearch">							
+											</div>
+											<div class="form-group">
+												<label>Apellido</label>
+												<input class="form-control" type="text" id="surnameCenterSearch">							
+											</div>
+											<div class="form-group">
+												<label>Tipo</label>
+												<select class="form-control" id = "searchTipo">
+													
+												</select>							
+											</div>
+											<div class="form-group">
+												<label class="radio-inline"><input type="radio" name="optradio" checked="true" value = "1">Activos</label><br/>
+												<label class="radio-inline"><input type="radio" name="optradio" value = "0">Eliminados</label><br/>
+												<label class="radio-inline"><input type="radio" name="optradio" value >Todos</label><br/>	
+											</div>
+											<div class="form-group">
+												<button type="button" class="btn btn-primary btn-lg btn-block" id="searchUser">Buscar</button>							
+											</div>						
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+            		
+					
+				</div>
+				<div class="tab-pane fade" id="centros">
+					<div class = "row">
+						<div class="col-lg-10">
+							<div style = "text-align:right; padding:5px;">
+								<button type="button" class="btn btn-primary" id = "btnNewCenter"><i class="fa fa-plus "></i>
+									Nuevo
+								</button>
+							</div>
+							<div class = "dataTable_wrapper" id = "centerTable">
+							</div>
+						</div>
+						<br/>
+						<div class="col-lg-2">
+							<div class="panel panel-default">			
+								<div class="panel-heading">Búsqueda</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="form-group"> 
+												<label>NIT</label>
+												<input class="form-control" type="text" id="NITSearch">						
+											</div>
+											<div class="form-group">
+												<label>Nombre</label>
+												<input class="form-control" type="text" id="centerNameSearch">							
+											</div>
+											<div class="form-group">
+												<label>Sector</label>
+												<select class="form-control" id = "searchSector">
+													
+												</select>							
+											</div>
+											<div class="form-group">
+												<label class="radio-inline"><input type="radio" name="centerStatus" checked="true" value = "1">Activos</label><br/>
+												<label class="radio-inline"><input type="radio" name="centerStatus" value = "2">Suspendidos</label><br/>												
+												<label class="radio-inline"><input type="radio" name="centerStatus" value = "0">Eliminados</label><br/>
+												<label class="radio-inline"><input type="radio" name="centerStatus" value = "">Todos</label>				
+											</div>
+											<div class="form-group">
+												<button type="button" class="btn btn-primary btn-lg btn-block" id="searchCenter">Buscar</button>							
+											</div>						
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+            		
+					
+				</div>				
+			</div>		
+		</div>
+	</div>
+	
+	
+	</div>	
+	<br/>
+	
+</div>
+
+
+
+<!-- Modal Llave Centro-->
+<div class="modal fade" id="keyCenterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content ">
+			<div class="modal-header ">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Creación de Llave de Servicio Web</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label>Llave</label>
+					<input class="form-control" type="text" id="wsKey" tabindex ='1' readonly>								
+				</div>
+				<div class ="row">
+					
+					<div class="col-lg-12" id = "editCenterMsn">
+						<!-- DIV MSN -->
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer" style = "text-align:center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" id = "generateKeyBtn" >Generar</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- Modal Edit Centro-->
+<div class="modal fade" id="editCenterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content ">
+			<div class="modal-header ">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Creación de Centro</h4>
+			</div>
+			<div class="modal-body">
+				<div class = "row">
+					<div class="col-lg-6">
+						<div class="form-group">
+							<div class = "row">
+								<div class="col-lg-9">
+									<label>NIT</label>
+									<input class="form-control" type="text" id="editCenterNIT" tabindex ='1' maxlength = "9" disabled>		
+								</div>
+								<div class="col-lg-3">
+									<label>DV</label>
+									<input class="form-control" type="text" id="editCenterDV" tabindex ='1' maxlength = "1" disabled>		
+								</div>
+							</div>
+						</div>				
+
+						<div class="form-group">
+							<label>Teléfono</label>
+							<input class="form-control" type="text" id="editCenterPhone" tabindex ='3'>							
+						</div>
+						
+						<div class="form-group">
+							<label>Sector</label>
+							<select class="form-control" id ="editCenterSector" tabindex ='5'>
+								
+							</select>								
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label>Nombre</label>
+							<input class="form-control" type="text" id="editCenterName" tabindex ='2'>	
+						</div>
+						<div class="form-group">
+							<label>Dirección</label>
+							<input class="form-control" type="text" id="editCenterDir" tabindex ='4'>							
+						</div>
+						<div class="form-group">
+							<label>Correo Electrónico</label>
+							<input class="form-control" type="mail" id="editCenterEmail" tabindex ='6'>							
+						</div>
+						
+						
+					</div>
+					
+				</div>
+
+				<div class ="row">
+					
+					<div class="col-lg-12" id = "editCenterMsn">
+						<!-- DIV MSN -->
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer" style = "text-align:center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" id = "editCenterBtn" >Guardar</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- Modal Nuevo Centro-->
+<div class="modal fade" id="newCenterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content ">
+			<div class="modal-header ">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Creación de Centro</h4>
+			</div>
+			<div class="modal-body">
+				<div class = "row">
+					<div class="col-lg-6">
+						<div class="form-group">
+							<div class = "row">
+								<div class="col-lg-9">
+									<label>NIT</label>
+									<input class="form-control" type="text" id="NewCenterNIT" tabindex ='1' maxlength = "9">		
+								</div>
+								<div class="col-lg-3">
+									<label>DV</label>
+									<input class="form-control" type="text" id="NewCenterDV" tabindex ='1' maxlength = "1">		
+								</div>
+							</div>
+						</div>				
+
+						<div class="form-group">
+							<label>Teléfono</label>
+							<input class="form-control" type="text" id="NewCenterPhone" tabindex ='3'>							
+						</div>
+						
+						<div class="form-group">
+							<label>Sector</label>
+							<select class="form-control" id ="NewCenterSector" tabindex ='5'>
+								
+							</select>								
+						</div>
+						
+						
+						
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label>Nombre</label>
+							<input class="form-control" type="text" id="NewCenterName" tabindex ='2'>	
+						</div>
+						<div class="form-group">
+							<label>Dirección</label>
+							<input class="form-control" type="text" id="NewCenterDir" tabindex ='4'>							
+						</div>
+						<div class="form-group">
+							<label>Correo Electrónico</label>
+							<input class="form-control" type="mail" id="NewCenterEmail" tabindex ='6'>							
+						</div>
+						
+						
+					</div>
+					
+				</div>
+
+				<div class ="row">
+					
+					<div class="col-lg-12" id = "newCenterMsn">
+						<!-- DIV MSN -->
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer" style = "text-align:center">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" id = "CreateNewCenter" >Guardar</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!-- Modal Nuevo usuario-->
+<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content ">
+			<div class="modal-header ">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Creación de Usuario</h4>
+			</div>
+			<div class="modal-body">
+				<div class = "row">
+					<div class="col-lg-6">
+						<div class="form-group"> 
+							<label>ID</label>
+							<input class="form-control" type="text" id="NewUserID" tabindex ='1' value = "">						
+						</div>
+						<div class="form-group">
+							<label>Nombre</label>
+							<input class="form-control" type="text" id="NewUserName" tabindex ='3'>							
+						</div>
+						
+						<div class="form-group">
+							<label>Oficina</label>
+							<input class="form-control" type="text" id="NewOfficeName" tabindex ='5'>							
+						</div>
+						<div class="form-group">
+							<label>Correo Electrónico</label>
+							<input class="form-control" type="mail" id="NewUserEmail" tabindex ='8'>							
+						</div>
+						
+						
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label>Tipo</label>
+							<select class="form-control" id ="NewUserType" tabindex ='2'>
+								
+							</select>	
+						</div>
+						<div class="form-group">
+							<label>Apellido</label>
+							<input class="form-control" type="text" id="NewUserSurname" tabindex ='4'>							
+						</div>
+						<div class="form-group">
+							<div class = "row">
+								<div class="col-lg-8">
+									<label>Teléfono</label>
+									<input class="form-control" type="text" id="NewUserPhone" tabindex ='6'>		
+								</div>
+								<div class="col-lg-4">
+									<label>Ext</label>
+									<input class="form-control" type="text" id="NewUserTelInd" tabindex ='7'>		
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Contraseña</label>
+							<input class="form-control" type="password" id="NewUserPass" placeholder = "Contraseña" tabindex ='10'>							
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class ="row">
+					<div class="col-lg-6">
+						<div class="form-group" id = "newUserCenterCont" >
+							<label>Centro</label>
+							<select class="form-control" id ="NewUserCenter" tabindex ='9'>
+								
+							</select>	
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label>Validar Contraseña</label>
+							<input class="form-control" type="password" id="NewUserPassCheck" placeholder = "Validar Contraseña" tabindex ='11'>							
+						</div>
+					</div>
+				</div>
+				<div class ="row">
+					<div class="col-lg-12" id = "newUserMsn"></div>
+					</div>
+			</div>
+			<div class="modal-footer" style = "text-align:center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" id = "CreateNewUser" >Guardar</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!-- Modal Editar usuario-->
+<div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content ">
+			<div class="modal-header ">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Edición de Usuario</h4>
+			</div>
+			<div class="modal-body">
+				<div class = "row">
+					<div class="col-lg-6">
+						<div class="form-group"> 
+							<label>ID</label>
+							<input class="form-control" type="text" id="EditUserID" tabindex ='1' disabled >						
+						</div>
+						<div class="form-group">
+							<label>Nombre</label>
+							<input class="form-control" type="text" id="EditUserName" tabindex ='3'>							
+						</div>
+						
+						<div class="form-group">
+							<label>Oficina</label>
+							<input class="form-control" type="text" id="EditOfficeName" tabindex ='5'>							
+						</div>
+						<div class="form-group">
+							<label>Correo Electrónico</label>
+							<input class="form-control" type="mail" id="EditUserEmail" tabindex ='8'>							
+						</div>
+				
+						
+						
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label>Tipo</label>
+							<select class="form-control" id ="EditUserType" tabindex ='2'>
+								
+							</select>	
+						</div>
+						<div class="form-group">
+							<label>Apellido</label>
+							<input class="form-control" type="text" id="EditUserSurname" tabindex ='4'>							
+						</div>
+						<div class="form-group">
+							<div class = "row">
+								<div class="col-lg-8">
+									<label>Teléfono</label>
+									<input class="form-control" type="text" id="EditUserTel" tabindex ='6'>		
+								</div>
+								<div class="col-lg-4">
+									<label>Ext</label>
+									<input class="form-control" type="text" id="EditUserTelInd" tabindex ='7'>		
+								</div>
+							</div>
+						</div>
+						<div class="form-group" id = "editUserCenterCont" tabindex ='9'>
+							<label>Centro</label>
+							<select class="form-control" id ="EditUserCenter">
+								
+							</select>	
+						</div>
+
+					</div>
+					<div class="col-lg-12" id = "editUserMsn">
+						<!-- DIV MSN -->
+					</div>
+				</div>
+		
+			</div>
+			<div class="modal-footer" style = "text-align:center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" id = "editUser" >Guardar</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
